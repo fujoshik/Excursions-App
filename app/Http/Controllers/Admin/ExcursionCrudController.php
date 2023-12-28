@@ -19,6 +19,46 @@ class ExcursionCrudController extends CrudController
     use \Backpack\CRUD\app\Http\Controllers\Operations\DeleteOperation;
     use \Backpack\CRUD\app\Http\Controllers\Operations\ShowOperation;
 
+    private function getFieldsData($show = FALSE) {
+        return [
+            [
+                'name'=> 'name',
+                'label' => 'Name',
+                'type'=> 'text'
+            ],
+            [
+                'name' => 'start',
+                'label' => 'Start',
+                'type' => 'datetime',
+            ],
+            [
+                'name' => 'duration_in_days',
+                'label' => 'Duration',
+                'type' => 'number'
+            ],
+            [    // SelectMultiple = n-n relationship (with pivot table)
+                'label'     => "Transports",
+                'type'      => ($show ? "select": 'select_multiple'),
+                'name'      => 'transports', // the method that defines the relationship in your Model
+// optional
+                'entity'    => 'transports', // the method that defines the relationship in your Model
+                'model'     => "App\Models\Transport", // foreign key model
+                'attribute' => 'vehicle', // foreign key attribute that is shown to user
+                'pivot'     => true, // on create&update, do you need to add/delete pivot table entries?
+            ],
+            [    // SelectMultiple = n-n relationship (with pivot table)
+                'label'     => "Organizers",
+                'type'      => ($show ? "select": 'select_multiple'),
+                'name'      => 'organizers', // the method that defines the relationship in your Model
+// optional
+                'entity'    => 'organizers', // the method that defines the relationship in your Model
+                'model'     => "App\Models\Organizer", // foreign key model
+                'attribute' => 'name', // foreign key attribute that is shown to user
+                'pivot'     => true, // on create&update, do you need to add/delete pivot table entries?
+            ]
+        ];
+    }
+
     /**
      * Configure the CrudPanel object. Apply settings to all operations.
      * 
@@ -29,6 +69,8 @@ class ExcursionCrudController extends CrudController
         CRUD::setModel(\App\Models\Excursion::class);
         CRUD::setRoute(config('backpack.base.route_prefix') . '/excursion');
         CRUD::setEntityNameStrings('excursion', 'excursions');
+
+        $this->crud->addFields($this->getFieldsData());
     }
 
     /**
@@ -73,5 +115,14 @@ class ExcursionCrudController extends CrudController
     protected function setupUpdateOperation()
     {
         $this->setupCreateOperation();
+    }
+
+    protected function setupShowOperation()
+    {
+        // by default the Show operation will try to show all columns in the db table,
+        // but we can easily take over, and have full control of what columns are shown,
+        // by changing this config for the Show operation
+        $this->crud->set('show.setFromDb', false);
+        $this->crud->addColumns($this->getFieldsData(TRUE));
     }
 }

@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class ExcursionRequest extends FormRequest
+class OrganizerRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -26,8 +26,8 @@ class ExcursionRequest extends FormRequest
     {
         return [
             'name' => 'required|min:5|max:255',
-            'start' => 'required|date',
-            'duration_in_days' => 'required|numeric'
+            'phone_number' => 'required|numeric|max:14',
+            'city' => 'required|min:3|max:255'
         ];
     }
 

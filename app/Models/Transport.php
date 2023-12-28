@@ -6,7 +6,7 @@ use Backpack\CRUD\app\Models\Traits\CrudTrait;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Excursion extends Model
+class Transport extends Model
 {
     use CrudTrait;
     use HasFactory;
@@ -17,7 +17,7 @@ class Excursion extends Model
     |--------------------------------------------------------------------------
     */
 
-    protected $table = 'excursions';
+    protected $table = 'transports';
     // protected $primaryKey = 'id';
     // public $timestamps = false;
     protected $guarded = ['id'];
@@ -35,16 +35,6 @@ class Excursion extends Model
     | RELATIONS
     |--------------------------------------------------------------------------
     */
-
-    public function transports()
-    {
-        return $this->belongsToMany(Transport::class, 'excursion_transports','excursion_id', 'transport_id');
-    }
-
-    public function organizers()
-    {
-        return $this->belongsToMany(Transport::class, 'excursion_organizers','excursion_id', 'organizer_id');
-    }
 
     /*
     |--------------------------------------------------------------------------

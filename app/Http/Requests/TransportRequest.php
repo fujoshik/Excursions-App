@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class ExcursionRequest extends FormRequest
+class TransportRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -25,9 +25,8 @@ class ExcursionRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required|min:5|max:255',
-            'start' => 'required|date',
-            'duration_in_days' => 'required|numeric'
+            'vehicle' => 'required|min:2|max:255',
+            'company_name' => 'required|min:5|max:255'
         ];
     }
 
