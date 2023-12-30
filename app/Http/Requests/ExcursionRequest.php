@@ -27,7 +27,8 @@ class ExcursionRequest extends FormRequest
         return [
             'name' => 'required|min:5|max:255',
             'start' => 'required|date',
-            'duration_in_days' => 'required|numeric'
+            'duration_in_days' => 'required|numeric',
+            'image' => 'image|max:100000'
         ];
     }
 
