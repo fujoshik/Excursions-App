@@ -16,28 +16,38 @@ class ExcursionSeeder extends Seeder
         DB::table('excursions')->insert([
             [
                 'name' => 'Trip to Venice',
-                'start' => '03-12-2024 09:00:00 AM',
-                'duration' => 4
+                'start' => '2024-03-12 09:00:00',
+                'duration_in_days' => 4,
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
             ],
             [
                 'name' => 'China Excursion',
-                'start' => '04-15-2024 02:00:00 AM',
-                'duration' => 7
+                'start' => '2024-04-15 02:00:00',
+                'duration_in_days' => 7,
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
             ],
             [
                 'name' => 'Visit Hong Kong',
-                'start' => '07-21-2024 02:00:00 AM',
-                'duration' => 5
+                'start' => '2024-07-21 02:00:00',
+                'duration_in_days' => 5,
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
             ],
             [
                 'name' => 'Ancient Asia',
-                'start' => '05-03-2024 04:00:00 AM',
-                'duration' => 12
+                'start' => '2024-05-03 04:00:00',
+                'duration_in_days' => 12,
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
             ],
             [
                 'name' => 'Visit the Alps',
-                'start' => '06-17-2024 08:00:00 AM',
-                'duration' => 8
+                'start' => '2024-06-17 08:00:00',
+                'duration_in_days' => 8,
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
             ],
         ]);
     }

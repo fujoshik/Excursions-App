@@ -2,7 +2,6 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
@@ -16,23 +15,33 @@ class TransportSeeder extends Seeder
         DB::table('transports')->insert([
             [
                 'vehicle' => 'car',
-                'company_name' => 'Commutopia'
+                'company_name' => 'Commutopia',
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
             ],
             [
                 'vehicle' => 'bus',
-                'company_name' => 'Road Wizards'
+                'company_name' => 'Road Wizards',
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
             ],
             [
                 'vehicle' => 'ferry',
-                'company_name' => 'Transportify'
+                'company_name' => 'Transportify',
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
             ],
             [
                 'vehicle' => 'boat',
-                'company_name' => 'All-Weather Carriers'
+                'company_name' => 'All-Weather Carriers',
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
             ],
             [
                 'vehicle' => 'plane',
-                'company_name' => 'FlyAway'
+                'company_name' => 'FlyAway',
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
             ],
         ]);
     }
