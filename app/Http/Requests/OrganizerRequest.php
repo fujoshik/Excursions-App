@@ -26,7 +26,7 @@ class OrganizerRequest extends FormRequest
     {
         return [
             'name' => 'required|min:5|max:255',
-            'phone_number' => 'required|numeric|max:14',
+            'phone_number' => 'required|numeric|min:10',
             'city' => 'required|min:3|max:255'
         ];
     }
