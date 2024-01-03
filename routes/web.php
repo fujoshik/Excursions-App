@@ -1,8 +1,8 @@
 <?php
 
+use App\Http\Controllers\ExcursionController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\IndexController;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,3 +15,5 @@ use App\Http\Controllers\IndexController;
 */
 
 Route::get('/', [IndexController::class, 'index']);
+
+Route::get('/excursions', [ExcursionController::class, 'getAll']);

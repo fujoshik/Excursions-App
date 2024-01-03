@@ -1,35 +1,37 @@
 <!doctype html>
 <html lang="en">
 <head>
-	<!-- Required meta tags -->
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Excursions App</title>
+
+    @section('meta')
+        <meta charset="utf-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
 	
-	<meta name="author" content="Untree.co">
-	<link rel="shortcut icon" href="favicon.png">
+	    <meta name="author" content="Untree.co">
 
-	<meta name="description" content="" />
-	<meta name="keywords" content="bootstrap, bootstrap5" />
-	
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Brygada+1918:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+	    <meta name="description" content="" />
+	    <meta name="keywords" content="bootstrap, bootstrap5" />
+    @show
 
-	<link rel="stylesheet" href="fonts/icomoon/style.css">
-	<link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
+    @section('stylesheets')
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Brygada+1918:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@400;700&display=swap" rel="stylesheet">
 
-	<link rel="stylesheet" href="css/tiny-slider.css">
-	<link rel="stylesheet" href="css/aos.css">
-	<link rel="stylesheet" href="css/flatpickr.min.css">
-	<link rel="stylesheet" href="css/glightbox.min.css">
-	<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="fonts/icomoon/style.css">
+		<link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
+		<link rel="shortcut icon" href="favicon.png">
 
+		<link rel="stylesheet" href="css/tiny-slider.css">
+		<link rel="stylesheet" href="css/aos.css">
+		<link rel="stylesheet" href="css/flatpickr.min.css">
+		<link rel="stylesheet" href="css/glightbox.min.css">
+		<link rel="stylesheet" href="css/style.css">
+    @show
 
-	<title>Excursions App</title>
 </head>
 <body>
-
-	<div class="site-mobile-menu site-navbar-target">
+<div class="site-mobile-menu site-navbar-target">
 		<div class="site-mobile-menu-header">
 			<div class="site-mobile-menu-close">
 				<span class="icofont-close js-menu-toggle"></span>
@@ -44,30 +46,15 @@
 			<div class="site-navigation">
 				<div class="row">
 					<div class="col-6 col-lg-3">
-						<a href="index.html" class="logo m-0 float-start">Sterial</a>
+						<a href="{{ url('/') }}" class="logo m-0 float-start">Excursions App</a>
 					</div>
 					<div class="col-lg-6 d-none d-lg-inline-block text-center nav-center-wrap">
 						<ul class="js-clone-nav  text-center site-menu p-0 m-0">
-							<li class="active"><a href="index.html">Home</a></li>
+							<li class="active"><a href="{{ url('/') }}">Home</a></li>
 							<li><a href="about.html">About us</a></li>
-							<li class="has-children">
-								<a href="#">Dropdown</a>
-								<ul class="dropdown">
-									<li><a href="#">Menu One</a></li>
-									<li class="has-children">
-										<a href="#">Menu Two</a>
-										<ul class="dropdown">
-											<li><a href="#">Sub Menu One</a></li>
-											<li><a href="#">Sub Menu Two</a></li>
-											<li><a href="#">Sub Menu Three</a></li>
-										</ul>
-									</li>
-									<li><a href="#">Menu Three</a></li>
-								</ul>
-							</li>
-							<li><a href="services.html">Services</a></li>
-							<li><a href="blog.html">Blog</a></li>
-
+							<li><a href="{{ url('/excursions') }}">Excursions</a></li>
+							<li><a href="{{ url('/organizers') }}">Organizers</a></li>
+							<li><a href="{{ url('/excursions') }}">Transports</a></li>
 						</ul>
 					</div>
 					<div class="col-6 col-lg-3 text-lg-end">
@@ -85,10 +72,36 @@
 		</div>
 	</nav>
 
-	<section>
-    	@yield('content')
-	</section>
+	<div class="hero overlay">
 
+		<div class="img-bg rellax">
+			<img src="images/hero_1.jpg" alt="Image" class="img-fluid">
+		</div>
+
+		<div class="container">
+			<div class="row align-items-center justify-content-start">
+				<div class="col-lg-5">
+					<h1 class="heading" data-aos="fade-up">It's a Big World Out There, Go Explore</h1>
+					<p class="mb-5" data-aos="fade-up">A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
+
+					<div data-aos="fade-up">
+						<a href="https://www.youtube.com/watch?v=5n-e6lOhVq0" class="play-button align-items-center d-flex glightbox3" >
+							<span class="icon-button me-3">
+								<span class="icon-play"></span>
+							</span>
+							<span class="caption">Watch Video</span>
+						</a>
+					</div>
+				</div>	
+			</div>
+		</div>		
+	</div>
+	
+	<div class="section">
+			<div class="container">
+    			@yield('content')
+			</div>
+    </div>
 	
 	<div class="site-footer">
 		<div class="container">
@@ -169,8 +182,8 @@
 			</div>
 		</div>
 
-
-		<script src="js/bootstrap.bundle.min.js"></script>
+    @section('scripts')
+        <script src="js/bootstrap.bundle.min.js"></script>
 		<script src="js/tiny-slider.js"></script>
 		<script src="js/aos.js"></script>
 		<script src="js/navbar.js"></script>
@@ -179,5 +192,6 @@
 		<script src="js/flatpickr.js"></script>
 		<script src="js/glightbox.min.js"></script>
 		<script src="js/custom.js"></script>
-	</body>
-	</html>
+    @show
+</body>
+</html>

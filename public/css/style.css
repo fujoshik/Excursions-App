@@ -9319,7 +9319,8 @@ textarea {
   .site-nav .site-navigation .site-menu {
     margin-bottom: 0; }
     .site-nav .site-navigation .site-menu > li {
-      display: inline-block; }
+      display: inline-block; 
+    }
       .site-nav .site-navigation .site-menu > li > a {
         font-size: 14px;
         padding: 10px 15px;
