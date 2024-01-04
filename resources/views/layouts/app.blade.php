@@ -51,7 +51,7 @@
 					<div class="col-lg-6 d-none d-lg-inline-block text-center nav-center-wrap">
 						<ul class="js-clone-nav  text-center site-menu p-0 m-0">
 							<li class="active"><a href="{{ url('/') }}">Home</a></li>
-							<li><a href="about.html">About us</a></li>
+							<li><a href="{{ url('/about') }}">About us</a></li>
 							<li><a href="{{ url('/excursions') }}">Excursions</a></li>
 							<li><a href="{{ url('/organizers') }}">Organizers</a></li>
 							<li><a href="{{ url('/transports') }}">Transports</a></li>

@@ -18,6 +18,8 @@ use App\Http\Controllers\IndexController;
 
 Route::get('/', [IndexController::class, 'index']);
 
+Route::get('/about', function() { return view('about'); });
+
 Route::get('/excursions', [ExcursionController::class, 'getAll']);
 
 Route::get('/organizers', [OrganizerController::class, 'getAll']);
