@@ -54,7 +54,7 @@
 							<li><a href="about.html">About us</a></li>
 							<li><a href="{{ url('/excursions') }}">Excursions</a></li>
 							<li><a href="{{ url('/organizers') }}">Organizers</a></li>
-							<li><a href="{{ url('/excursions') }}">Transports</a></li>
+							<li><a href="{{ url('/transports') }}">Transports</a></li>
 						</ul>
 					</div>
 					<div class="col-6 col-lg-3 text-lg-end">
