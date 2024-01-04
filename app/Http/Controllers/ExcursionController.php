@@ -10,11 +10,17 @@ class ExcursionController extends BaseController
 {
     public function getAll()
     {
-        $searchString = Input::get ( 'searchString' );
+        $searchString = Input::get('searchString');
 
         if ($searchString != null)
         {
-            $excursions = Excursion::where ( 'name', 'LIKE', '%' . $searchString . '%' )->get();
+            $excursions = Excursion::where('start', 'LIKE', '%' . $searchString . '%')
+            ->orWhere('name', 'LIKE', '%' . $searchString . '%')
+            ->orWhereHas('organizers', function ($query) use ($searchString) {
+                $query->where('organizers.name', $searchString);
+            })->orWhereHas('transports', function ($query) use ($searchString) { 
+                $query->where('transports.vehicle', $searchString);
+            })->get();
         }
         else 
         {

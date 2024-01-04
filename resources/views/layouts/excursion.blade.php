@@ -19,6 +19,7 @@
   </form>
   <div style="padding-top:50px;"></div>
   <h2 style="text-align: center; color: black; font-weight: bold">Excursions</h2>
+  <div style="padding-top:20px;"></div>
   <table class="table table-striped">
   <thead>
     <tr>
@@ -33,7 +34,7 @@
     @foreach($excursions->reverse() as $excursion)
     <tr>
       <th scope="row">{{$excursion->name}}</th>
-      <td>{!!$excursion->start!!}</td>
+      <td>{{$excursion->start}}</td>
       <td>{{$excursion->duration_in_days}}</td>
       <td>
         @foreach($excursion->organizers as $organizer)
