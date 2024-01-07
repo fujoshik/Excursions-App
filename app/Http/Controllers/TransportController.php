@@ -9,7 +9,7 @@ class TransportController extends Controller
 {
     public function getAll()
     {
-        $searchString = Input::get('searchString');
+        $searchString = htmlspecialchars(strip_tags(Input::get('searchString')));
 
         if ($searchString != null)
         {

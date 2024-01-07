@@ -10,7 +10,7 @@ class ExcursionController extends BaseController
 {
     public function getAll()
     {
-        $searchString = Input::get('searchString');
+        $searchString = htmlspecialchars(strip_tags(Input::get('searchString')));
 
         if ($searchString != null)
         {
