@@ -28,6 +28,7 @@
       <th scope="col">Duration in days</th>
       <th scope="col">Organizers</th>
       <th scope="col">Types of transport</th>
+      <th scope="col">Image</th>
     </tr>
   </thead>
   <tbody>
@@ -46,6 +47,7 @@
           {{ $transport->vehicle }} |
         @endforeach
       </td>
+      <td><img src="{{url(''.$excursion->image)}}" width="120px" height="60px" alt="excursion"></td>
     </tr>
     @endforeach
   </tbody>
